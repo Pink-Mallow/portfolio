@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="See the world through my eyes!">
+    <title>Portfolio</title>
+    <link
+      rel="stylesheet"
+      as="style"
+      href="style.css">
+    <script
+      rel="preload"
+      src="index.js"
+      defer></script>
+  </head>
+  <body>
+    {% include 'head' %}
+
+    <header>
+      {% include 'nav' %}
+    </header>
+
+    {{ repos | json }}
+
+    <ul>
+      {% for repo in repos %}
+        <li>
+          {{ repo.name }}:
+          <a href="{{ repo.html_url }}">{{ repo.html }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <main>
+      <h1>Inez <br> El Azzouzi</h1>
+      <h2>Frontend Developer</h2>
+      <h2>Creative Developer</h2>
+      <h2>Multi-Disciplinary Artisan
+      </h2>
+
+      <p class="about" id="about">
+        About me   I started programming for the first time back in 2023, having no idea what programming is.
+        <br> Though, as someone who loves art, i see this as a different way to translate my creativity into code.
+        <br> So i started from scratch with no knowledge.
+        <br> And now, I aspire to become a Creative Developer.
+      </p>
+
+      <section class="projects" id="projects">
+        <h3>I Love Web</h3>
+        <h3>Creative Coding Spikes</h3>
+        <h3>Three.js</h3>
+        <h3>Profile Card</h3>
+        <h3>Side Projects</h3>
+      </section>
+    </main>
+
+    {% include 'contact' %}
+  </body>
+</html>
+
+{% comment %} 
+to restart the terminal:
+  npx @11ty/eleventy --serve
+
+genereerd dynamische bestanden:
+  npx @11ty/eleventy
+{% endcomment %}
