@@ -1,18 +1,13 @@
-{% include 'head' %}
-    <header>
-      {% include 'nav' %}
-    </header>
-    <main>
-      {% include 'intro' %}
-      {% include 'about' %}
-      {% include 'web-projects' %}
-      {% include 'art-projects' %}
-      {% include 'prized-work' %}
-    </main>
-    <footer>
-      {% include 'contact' %}
-    </footer>
-{% include 'foot' %}
+---
+layout: layout/base.liquid
+title: Home
+---  
+
+  {% include 'intro' %}
+  {% include 'about' %}
+  {% include 'web-projects' %}
+  {% include 'art-projects' %}
+  {% include 'prized-work' %}
 
 
 {% comment %} 
